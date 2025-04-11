@@ -1,0 +1,11 @@
+### User ###
+
+DELETE http://localhost:8000/api/user/1 HTTP/1.1
+
+### Post ###
+
+DELETE http://localhost:8000/api/post/1 HTTP/1.1
+
+### Interaction ###
+
+DELETE http://localhost:8000/api/interaction/1 HTTP/1.1

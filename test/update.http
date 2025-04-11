@@ -1,0 +1,17 @@
+### Post ###
+
+PATCH http://localhost:8000/api/post/1 HTTP/1.1
+content-type: application/json
+
+{
+    "content": "updateeeeee"
+}
+
+### Interaction ###
+
+PATCH http://localhost:8000/api/interaction/1 HTTP/1.1
+content-type: application/json
+
+{
+    "is_like": false
+}

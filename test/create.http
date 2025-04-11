@@ -1,0 +1,92 @@
+### User ###
+
+POST http://localhost:8000/api/user HTTP/1.1
+content-type: application/json
+
+{
+    "name": "user1",
+    "password": "321"
+}
+
+###
+
+POST http://localhost:8000/api/user/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "user2",
+    "password": "123"
+}
+
+###
+
+POST http://localhost:8000/api/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "name": "user2",
+    "password": "123"
+}
+
+### Post ###
+
+POST http://localhost:8000/api/post HTTP/1.1
+content-type: application/json
+
+{
+    "content": "oiiiiiiiiiiiiiiii sou user1",
+    "id_user": 6
+}
+
+###
+
+POST http://localhost:8000/api/post HTTP/1.1
+content-type: application/json
+
+{
+    "content": "sou user2",
+    "id_user": 2
+}
+
+###
+
+POST http://localhost:8000/api/post HTTP/1.1
+content-type: application/json
+
+{
+    "content": "sou user2 de novo",
+    "id_user": 2
+}
+
+### Interaction ###
+
+POST http://localhost:8000/api/interaction HTTP/1.1
+content-type: application/json
+
+{
+    "is_like": false,
+    "id_post": 1,
+    "id_user": 1
+}
+
+###
+
+POST http://localhost:8000/api/interaction/ HTTP/1.1
+content-type: application/json
+
+{
+    "is_like": true,
+    "id_post": 2,
+    "id_user": 1
+}
+
+###
+
+POST http://localhost:8000/api/interaction/ HTTP/1.1
+content-type: application/json
+
+{
+    "is_like": false,
+    "id_post": 3,
+    "id_user": 2
+}

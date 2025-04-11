@@ -1,0 +1,23 @@
+### User ###
+
+GET http://localhost:8000/api/user HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/user/10 HTTP/1.1
+
+### Post ###
+
+GET http://localhost:8000/api/post HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/post/1 HTTP/1.1
+
+### Interaction ###
+
+GET http://localhost:8000/api/interaction HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/interaction/1 HTTP/1.1
