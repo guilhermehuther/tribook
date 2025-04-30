@@ -10,7 +10,7 @@ Rede social para o [Trilha](https://www.trilhaufpb.com).
 
 ### Diagrama de Classes
 
-![diagrama_de_classes]((https://github.com/guilhermehuther/tribook/blob/main/docs/diagrama%20final%20att.drawio.png?raw=true))
+![diagrama_de_classes](https://github.com/guilhermehuther/tribook/blob/main/docs/diagrama%20final%20att.drawio.png))
 
 ## Padrões
 
