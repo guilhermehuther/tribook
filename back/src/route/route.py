@@ -37,7 +37,6 @@ user_router = user_factory.create_router()
 interaction_router = interaction_factory.create_router()
 post_router = post_factory.create_router()
 
-
 router.include_router(user_router)
 router.include_router(interaction_router)
 router.include_router(post_router)

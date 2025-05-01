@@ -45,7 +45,7 @@ content-type: application/json
 
 {
     "content": "sou user2",
-    "id_user": 2
+    "id_user": 1
 }
 
 ###
@@ -55,7 +55,7 @@ content-type: application/json
 
 {
     "content": "sou user2 de novo",
-    "id_user": 2
+    "id_user": 1
 }
 
 ### Interaction ###
