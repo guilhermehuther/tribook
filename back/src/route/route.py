@@ -8,6 +8,7 @@ from ..model.model import (
     Interaction, InteractionCreate, InteractionPublic, InteractionUpdate,
     Post, PostCreate, PostPublic, PostUpdate
 )
+from .login import router as login_router
 
 user_factory = CRUDRouteFactory(
     model=User,
@@ -38,5 +39,6 @@ interaction_router = interaction_factory.create_router()
 post_router = post_factory.create_router()
 
 router.include_router(user_router)
+router.include_router(login_router)
 router.include_router(interaction_router)
 router.include_router(post_router)
