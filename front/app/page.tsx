@@ -1,11 +1,13 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCookie, deleteCookie } from 'cookies-next/client';
 
-import { FetchProxy } from "../proxies/fetch";
+import Post from "@/components/post";
 import Register from "@/components/register";
 import Spinner from "@/components/ui/spinner";
+import { Button } from "@/components/ui/button";
+import { FetchProxy } from "../proxies/fetch";
 
 export default function Home() {
   const [data, setData] = useState([])
@@ -15,15 +17,18 @@ export default function Home() {
   const [users, setUsers] = useState({});
 
   const getUsers = async () => {
+    setLoading(true);
     try {
       const response = await FetchProxy.request("users");
       const userDict = Object.fromEntries(response.map((user: any) => [user.id_user, user.name]));
       setUsers(userDict);
     } catch (error) {
       console.error("Failed to fetch users", error);
-    };
-  }
-  
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const cookie = getCookie("session");
 
@@ -53,12 +58,30 @@ export default function Home() {
 
     init();
   }, []);
-  
+
   return (
     <div className={`${login == false ? "flex align-center items-center h-[90vh] justify-center" : ""}`}>
       { 
         loading == true ? <Spinner/> : (
-            login == false ? <Register/> : null
+            login == false ? <Register/> : (
+                id_user != -1 ? 
+                  <div>
+                    <Button onClick={() => {
+                        deleteCookie("session")
+
+                        window.location.reload()
+                      }} 
+                      className="float-right m-5"
+                    >
+                        Logout
+                    </Button>
+                    <Post 
+                      post_data={data} 
+                      users={users}
+                      id_user={id_user}
+                    /> 
+                  </div> : null
+            ) 
           )
       }
     </div>
